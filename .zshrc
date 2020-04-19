@@ -15,7 +15,7 @@ compinit
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=10000
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 #
 
