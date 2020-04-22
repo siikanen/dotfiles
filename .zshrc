@@ -69,4 +69,5 @@ PATH="$PATH:$HOME/.cargo/bin"
 
 # Aliases
 alias dotfiles='/usr/bin/git --git-dir=/home/santeri/.dotfiles --work-tree=/home/santeri'
-alias l="ls -lah"
+alias l="ls -lah --color=always"
+alias cat="bat"
