@@ -57,7 +57,8 @@ zinit wait lucid light-mode for \
     OMZ::plugins/sudo/sudo.plugin.zsh \
     zsh-users/zsh-autosuggestions \
     zdharma/fast-syntax-highlighting \
-    zdharma/history-search-multi-word 
+    zdharma/history-search-multi-word  \
+    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=1
