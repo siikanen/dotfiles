@@ -10,3 +10,5 @@ export SDL_VIDEODRIVER=wayland,x11
 export BEMENU_BACKEND=wayland
 export WLR_DRM_DEVICES=/dev/dri/card0
 
+# Fix some java issues
+export _JAVA_AWT_WM_NONREPARENTING=1
