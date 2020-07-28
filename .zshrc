@@ -53,16 +53,20 @@ zinit for \
     pick"async.zsh" src"pure.zsh" \
                 sindresorhus/pure
 
+zinit load zsh-users/zsh-autosuggestions
+
 zinit wait lucid light-mode for \
     OMZ::plugins/sudo/sudo.plugin.zsh \
-    zsh-users/zsh-autosuggestions \
     zdharma/fast-syntax-highlighting \
     zdharma/history-search-multi-word  \
-    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+    OMZ::plugins/dotenv/dotenv.plugin.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 bindkey '^ ' autosuggest-accept
+
+ZSH_DOTENV_PROMPT=false
 
 PROMPT='%(12V.%F{$prompt_pure_colors[virtualenv]}%12v%f .)%(?.%F{$prompt_pure_colors[prompt:success]}.%F{$prompt_pure_colors[prompt:error]}[$?] )${prompt_pure_state[prompt]}%f '
 
