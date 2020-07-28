@@ -25,6 +25,10 @@ set $menu dmenu_run | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/santeri/walls/arch2.jpeg fill
+
+# Automatic tiling direction switching
+exec_always autotiling 
+
 #
 # Example configuration:
 #
@@ -62,6 +66,11 @@ input "type:touchpad" {
     natural_scroll enabled
     tap enabled
 }
+
+input "type:mouse" {
+    accel_profile flat
+}
+
 # Set colors
 exec xrdb .Xresources
 
@@ -100,6 +109,9 @@ workspace_auto_back_and_forth yes
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+
+    # Make windows bigger than default 75 x 50
+    floating_minimum_size 275 x 105
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -215,6 +227,8 @@ workspace_auto_back_and_forth yes
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+    
 #
 # Resizing containers:
 #
