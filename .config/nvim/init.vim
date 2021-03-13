@@ -38,13 +38,20 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Utility plugins
 Plug 'majutsushi/tagbar'
+Plug 'jreybert/vimagit'
 
 " Programming support
 Plug 'jiangmiao/auto-pairs'
+Plug 'APZelos/blamer.nvim'
 " Plug 'tmsvg/pear-tree'
 Plug 'tomtom/tcomment_vim'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'sodapopcan/vim-twiggy'
+Plug 'junegunn/gv.vim'
 
 " LSP stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,9 +84,15 @@ set encoding=utf8
 " nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" Make searching case insensitive on lower case only
+set ignorecase
+set smartcase
+
+set mouse=a
+
 " Set Proper Tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 
@@ -88,12 +101,20 @@ set laststatus=2
 " Enable highlighting of the current line
 set cursorline
 
+" Customize auto-complete style
+set completeopt=menuone,noinsert,noselect
+
 " Theme and Styling
 syntax on
 set t_Co=256
 
 " Fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" Enable git blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 700
+let g:blamer_relative_time = 1
 
 " Syntastic configuration start
 set statusline+=%#warningmsg#
@@ -108,7 +129,7 @@ let g:syntastic_check_on_wq = 0
 
 " Provide :Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <Leader>p :Prettier<CR>
+nnoremap <Leader>F :Prettier<CR>
 
 """""""" Colors configurations
 colorscheme spacegray
