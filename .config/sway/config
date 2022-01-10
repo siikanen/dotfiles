@@ -27,7 +27,7 @@ set $menu dmenu_run | xargs swaymsg exec --
 output * bg /home/santeri/walls/arch2.jpeg fill
 
 # Automatic tiling direction switching
-exec_always autotiling 
+exec_always autotiling
 
 #
 # Example configuration:
@@ -63,12 +63,15 @@ input "type:keyboard" {
 input "type:touchpad" {
     accel_profile adaptive
     drag enabled
+    # pointer_accel 1
     natural_scroll enabled
+    scroll_factor 0.4
     tap enabled
 }
 
 input "type:mouse" {
     accel_profile flat
+    pointer_accel 0
 }
 
 # Set colors
