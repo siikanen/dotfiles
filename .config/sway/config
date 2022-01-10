@@ -264,7 +264,7 @@ bindsym $mod+r mode "resize"
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 11
     position top
-    status_command /usr/bin/i3status-rs ~/.config/sway/config.toml
+    status_command /usr/bin/i3status-rs
     colors {
         separator #666666
         background #333333
