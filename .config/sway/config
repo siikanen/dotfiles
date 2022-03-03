@@ -145,7 +145,15 @@ workspace_auto_back_and_forth yes
     bindsym $mod+Shift+0 exec --no-startup-id swaylock --screenshots -f --effect-blur 7x4 --clock  --font Hack --effect-vignette 600:10 && systemctl hibernate
     bindsym $mod+Shift+s exec --no-startup-id swaylock --screenshots -f --effect-blur 7x4 --clock  --font Hack --effect-vignette 600:10 && systemctl suspend
 
+    # media controls
+    bindsym XF86AudioNext exec --no-startup-id playerctl next
+    bindsym XF86AudioStop exec playerctl play-pause
+    bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+    bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 
+    # Dell XPS/precision pause key, despite libinput claiming 164
+    # see xmodmap -pke | grep -i xf86audio
+    bindcode 172 exec --no-startup-id playerctl play-pause
 
 # Moving around:
 #
